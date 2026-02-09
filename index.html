@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD JavaScript</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    /* plus besoin de style bouton spécial ici */
+    table { border-collapse: collapse; margin-top: 10px; }
+    /* on enlève les traits du tableau, on garde juste un peu d'espace */
+    td, th { border: none; padding: 5px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <p>
+    <a href="#" onclick="showForm()">ajout visiteur</a> |
+    <a href="#" onclick="showList()">liste utilisateurs</a> |
+    <a href="#" onclick="showDashboard()">dashboard</a>
+  </p>
+
+  <!-- FORMULAIRE -->
+  <div id="formSection">
+    <h3></h3>
+
+    <input id="name" type="text" placeholder="Name"><br><br>
+    <input id="age" type="number" placeholder="Age"><br><br>
+    <input id="email" type="email" placeholder="Email"><br><br>
+    <input id="identifier" type="text" placeholder="Identifier"><br><br>
+
+    <button onclick="saveUser()">Inscription</button>
+    <button onclick="resetForm()">reset</button>
+  </div>
+
+  <!-- LISTE -->
+  <div id="listSection" class="hidden">
+    <!-- titre "Liste des utilisateurs" en gras supprimé comme demandé -->
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Email</th>
+          <th>Identifier</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="userTable"></tbody>
+    </table>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboardSection" class="hidden">
+    <h3>Dashboard</h3>
+    <p>Total des inscrits : <span id="total"></span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
